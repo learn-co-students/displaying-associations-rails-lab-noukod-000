@@ -22,13 +22,13 @@ describe "artists", type:  :feature do
     end
   end
 
-  # it "lists the artists" do
-  #   visit artists_path
-  #   expect(page).to have_content("Daft Punk")
-  # end
+  it "lists the artists" do
+    visit artists_path(@artist)
+    expect(page).to have_content("Daft Punk")
+  end
 
   it "shows the song count for each artist" do
-    visit artists_path
+    visit artists_path(@artist)
     expect(page).to have_content("2 songs")
   end
 end
